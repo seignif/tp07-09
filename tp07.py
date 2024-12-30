@@ -7,9 +7,7 @@ class Fraction:
         Initialize a fraction.
 
         Preconditions:
-        - `num` and `den` must be integers.
-        - `den` must not be zero.
-
+        - none (type is verified before setting attributes)
         Postconditions:
         - The fraction is stored in reduced form.
         - The denominator is always positive.
@@ -75,7 +73,7 @@ class Fraction:
         Add another fraction or an integer to this fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction or an integer.
+        - none
 
         Postconditions:
         - Returns a new Fraction representing the sum.
@@ -96,7 +94,7 @@ class Fraction:
         Subtract another fraction from this fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
+        - none
 
         Postconditions:
         - Returns a new Fraction representing the difference.
@@ -115,7 +113,7 @@ class Fraction:
         Multiply this fraction by another fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
+        - none
 
         Postconditions:
         - Returns a new Fraction representing the product.
@@ -134,15 +132,13 @@ class Fraction:
         Divide this fraction by another fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
-        - `other`'s numerator must not be zero.
+        - none
 
         Postconditions:
         - Returns a new Fraction representing the quotient.
 
         Raises:
         - TypeError: if `other` is not a Fraction.
-        - ZeroDivisionError: if `other`'s numerator is zero.
         """
         if not isinstance(other, Fraction):
             raise TypeError("Can only divide two Fraction objects.")
@@ -157,7 +153,7 @@ class Fraction:
         Raise this fraction to the power of an integer.
 
         Preconditions:
-        - `power` must be an integer.
+        - none
 
         Postconditions:
         - Returns a new Fraction representing the result.
@@ -177,10 +173,13 @@ class Fraction:
         Check if this fraction is equal to another fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
+        - none
 
         Postconditions:
         - Returns True if the fractions are equal, False otherwise.
+
+        Raises:
+        - type Error: if `other` is not a Fraction.
         """
         if not isinstance(other, Fraction):
             return False
@@ -203,7 +202,7 @@ class Fraction:
         Check if this fraction is less than another fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
+        -none
 
         Postconditions:
         - Returns True if this fraction is less than `other`, False otherwise.
@@ -232,7 +231,7 @@ class Fraction:
         Check if this fraction is greater than another fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
+        - none
 
         Postconditions:
         - Returns True if this fraction is greater than `other`, False otherwise.
@@ -247,10 +246,13 @@ class Fraction:
         Check if this fraction is greater than or equal to another fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
+        - none
 
         Postconditions:
         - Returns True if this fraction is greater than or equal to `other`, False otherwise.
+
+        RAISES :
+        -TypeError if other is not an instance of int or Fraction
         """
         return self.__eq__(other) or self.__gt__(other)
 
@@ -313,7 +315,7 @@ class Fraction:
         Check if this fraction is adjacent to another fraction.
 
         Preconditions:
-        - `other` must be an instance of Fraction.
+        - None
 
         Postconditions:
         - Returns True if the difference between this fraction and `other` is a unit fraction, False otherwise.
